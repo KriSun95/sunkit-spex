@@ -2,6 +2,7 @@ import numpy as np
 
 
 from sunxspex import emission
+from sunxspex.emission import BrokenPowerLawElectronDistribution
 
 
 def test_broken_power_law_electron_distribution():
@@ -83,15 +84,15 @@ def test_get_integrand():
 
 def test_integrate_part():
     eph = np.array([10.0, 20.0, 40.0, 80.0, 150.0])
+
+    electron_dist = BrokenPowerLawElectronDistribution(p=5.0, q=7.0, eelow=1, eebrk=200,
+                                                       eehigh=200)
+
     params = {'model': 'thin-target',
               'maxfcn': 2048,
               'rerr': 1e-4,
               'z': 1.2,
-              'p': 5.0,
-              'q': 7.0,
-              'eebrk': 200,
-              'eelow': 1.0,
-              'eehigh': 200.0,
+              'electron_dist': electron_dist,
               'photon_energies': eph,
               'a_lg': np.log10(eph),
               'b_lg': np.full_like(eph, np.log10(200)),
