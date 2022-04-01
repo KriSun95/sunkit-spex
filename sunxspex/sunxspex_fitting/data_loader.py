@@ -267,7 +267,6 @@ class LoadSpec:
                     print("How do I know the instument?")
         return _instruments_names
 
-
     @property
     def rebin(self):
         """ ***Property*** Allows energy channels to be rebinned.
@@ -466,7 +465,6 @@ class LoadSpec:
             print("Setting the undo_rebin property to nothing will undo all spectral rebinnings but it will be set to None and nothing will be undone here.")
 
         self.undo_rebin # now that _undo_rebin list is set, actually undo the rebinning
-
 
     def _rebin_data(self, spectrum, group_min):
         """ Rebins the data and channels to return them.

@@ -741,8 +741,6 @@ def _calculate_abundances(abundance_type, relative_abundances):
         abundances *= rel_abund_values
     return abundances
 
-
-
 # ### Continuum emission, kris
 # from astropy import constants as const
 # from sunxspex.io import load_chianti_continuum, load_xray_abundances # chianti_kev_cont_common_load,

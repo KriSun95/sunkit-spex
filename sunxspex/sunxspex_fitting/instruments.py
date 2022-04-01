@@ -309,7 +309,6 @@ class NustarLoader(InstrumentBlueprint):
             e_lo_arf, e_hi_arf, eff_area = None, None, None
             e_lo_rmf, e_hi_rmf, ngrp, fchan, nchan, matrix, redist_m = None, None, None, None, None, None, None
 
-
         channel_bins = self._calc_channel_bins(e_lo_rmf, e_hi_rmf) if type(channel_bins)==type(None) else channel_bins
         channel_binning = np.diff(channel_bins).flatten()
 
@@ -745,7 +744,7 @@ class RhessiLoader(InstrumentBlueprint):
         if boolean:
             # make sure to save the full data first (without background subtraction) if not already done
             if not hasattr(self, "_full_data"):
-                 self._full_data = {"counts":self._loaded_spec_data["counts"], "count_error":self._loaded_spec_data["count_error"], "count_rate":self._loaded_spec_data["count_rate"], "count_rate_error":self._loaded_spec_data["count_rate_error"]}
+                self._full_data = {"counts":self._loaded_spec_data["counts"], "count_error":self._loaded_spec_data["count_error"], "count_rate":self._loaded_spec_data["count_rate"], "count_rate_error":self._loaded_spec_data["count_rate_error"]}
 
             new_cts = self._full_data["counts"] - (self._loaded_spec_data["extras"]["background_rate"]*self._loaded_spec_data["effective_exposure"]*self._loaded_spec_data["count_channel_binning"])
             new_cts_err = np.sqrt(self._full_data["count_error"]**2+(self._loaded_spec_data["extras"]["background_count_error"]*(self._loaded_spec_data["effective_exposure"]/self._loaded_spec_data["extras"]["background_effective_exposure"]))**2)
@@ -922,7 +921,6 @@ class RhessiLoader(InstrumentBlueprint):
             self.__time_warning()
 
         self._update_event_data_with_times()
-
 
     def _update_bg_data_with_times(self):
         """ Changes/adds the background data in `_loaded_spec_data["extras"]` to the data in the defined background time range.
@@ -1511,9 +1509,6 @@ class StixLoader(RhessiLoader):
         sub-set (nchan), 2d array that is the spectral response (srm).
         """
         return stix_spec._get_srm_file_info(f_srm)
-
-
-
 
 class CustomLoader(InstrumentBlueprint):
     """

@@ -925,7 +925,6 @@ class SunXspex(LoadSpec):
             frs = np.tile(_default_fitting_range, (len(self.loaded_spec_data.keys()), 1))
             warnings.warn(self._energy_fitting_range_instructions())
 
-
         self._energy_fitting_range = dict(zip(self.loaded_spec_data.keys(), frs))
 
     def _energy_fitting_range_instructions(self):
@@ -936,7 +935,6 @@ class SunXspex(LoadSpec):
         String.
         """
         return "\nNeed one fitting_energy_range entry (e.g., [2,6.5]) for a fitting range for each loaded spectrum. Back to default [0,inf].\nExamples: energy_fitting_range=[1,2] or energy_fitting_range=[[1,2], [5,6]] for fitting 1--2 keV or 1--2 and 5--6 keV, respectively, for all loaded spectra.\nenergy_fitting_range={\"Spectrum1\":[1,2], \"Spectrum2\":[[1,2], [5,6]]} for fitting spectrum1 over 1--2 keV and spectrum2 over 1--2 and 5--6 keV, respectively."
-
 
     @property
     def confidence_range(self):
@@ -1025,7 +1023,6 @@ class SunXspex(LoadSpec):
                 _isolated_model_strings.append(["".join(put_mods_back), _mod_counter])
                 # model shorthand string for _mod_from_str and the number for the input parameters. E.g., 1st f_vth->f_vth(T1,EM1, ...), 2nd f_vth->f_vth(T2,EM2, ...)
             self._separate_models = _isolated_model_strings
-
 
     def _mod_from_str(self, model_string, custom_param_number=None, _create_separate_models_for_one=False):
         """ Construct a named function object from a given string.
@@ -1242,7 +1239,6 @@ class SunXspex(LoadSpec):
         # interpolate the counts to them for them to be used with the original energies
         return interp1d(energies, array, bounds_error=False, fill_value="extrapolate")(new_energies)
 
-
     def _match_kwargs2orig_params(self, original_parameters, expected_kwargs, given_kwargs):
         """ Returns the coorect order of inputs from being arrange with the free ones first.
 
@@ -1390,7 +1386,6 @@ class SunXspex(LoadSpec):
         dictionary = self._tie_params(dictionary)
 
         return self._counts_model(**dictionary, **other_inputs)
-
 
     @property
     def show_params(self):
@@ -2331,7 +2326,6 @@ class SunXspex(LoadSpec):
                                            array=cts_model,
                                            gain_slope=self.rParams["Value", "gain_slope_spectrum"+str(spec_no)],
                                            gain_offset=self.rParams["Value", "gain_offset_spectrum"+str(spec_no)])
-
 
         return self.loaded_spec_data[spectrum]['count_channel_mids'], cts_model
 
@@ -3705,7 +3699,6 @@ class SunXspex(LoadSpec):
 
         return axes, res_axes
 
-
     def _prior(self, *args):
         """ Defines parameter priors.
 
@@ -4118,7 +4111,6 @@ class SunXspex(LoadSpec):
                 self.nwalkers = 2*self._ndim
         else:
             print("\'number_of_walkers\' must be of type \'int\' and >= 2*number of free parameters (\'self._ndim\') or \'None\'.")
-
 
         # make sure the random number from normal distribution are of the same order as the earlier solution, or -1 orde, and get a good spread across the boundaries given
         walkers_start = self._walker_spread(free_params_list, free_bounds, self.nwalkers, spread_type=walker_spread)

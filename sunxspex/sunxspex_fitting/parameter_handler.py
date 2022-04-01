@@ -126,7 +126,6 @@ class Parameters:
         # create table
         self.parameter_info = pd.DataFrame(dict(zip(self.states, [status, values, bounds, errors])))
 
-
     @property
     def param_name(self):
         """ ***Property*** Easily see the parameters located in the table.

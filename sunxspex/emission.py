@@ -928,7 +928,6 @@ def split_and_integrate0(*, model, photon_energies, maxfcn, rerr, eelow, eebrk, 
                          f'({eelow}<={eebrk}<={eehigh}).')
         #want to return something clearly false instead...
 
-
     # Create arrays for integral sums and error flags.
     intsum1 = np.zeros_like(photon_energies, dtype=np.float64)
     ier1 = np.zeros_like(photon_energies, dtype=np.float64)
