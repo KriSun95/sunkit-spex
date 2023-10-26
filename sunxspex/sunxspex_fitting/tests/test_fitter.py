@@ -4,8 +4,8 @@ import numpy as np
 import pytest
 from numpy.testing import assert_allclose
 
+from sunxspex.instruments.inst import CustomLoader, InstrumentBlueprint
 from sunxspex.sunxspex_fitting.fitter import SunXspex
-from sunxspex.sunxspex_fitting.instruments import CustomLoader, InstrumentBlueprint
 
 rng = np.random.default_rng(2022)
 

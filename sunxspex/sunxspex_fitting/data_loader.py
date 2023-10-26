@@ -8,7 +8,7 @@ import numpy as np
 
 from astropy.io import fits
 
-from sunxspex.sunxspex_fitting import instruments as inst  # sunxspex.sunxspex_fitting.instruments
+from sunxspex.instruments import inst  # sunxspex.sunxspex_fitting.instruments
 from sunxspex.sunxspex_fitting.parameter_handler import (  # sunxspex.sunxspex_fitting.parameter_handler
     _make_into_list,
     isnumber,

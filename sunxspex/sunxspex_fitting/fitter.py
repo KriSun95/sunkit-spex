@@ -37,7 +37,7 @@ from astropy.table import Table
 
 from sunxspex.logging import get_logger
 from sunxspex.sunxspex_fitting.data_loader import LoadSpec
-from sunxspex.sunxspex_fitting.instruments import rebin_any_array
+from sunxspex.instruments.inst import rebin_any_array
 from sunxspex.sunxspex_fitting.likelihoods import LogLikelihoods
 from sunxspex.sunxspex_fitting.parameter_handler import Parameters, isnumber
 from sunxspex.sunxspex_fitting.photon_models_for_fitting import (  # noqa

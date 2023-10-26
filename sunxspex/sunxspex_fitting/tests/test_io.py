@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 import numpy as np
 
-from sunxspex.sunxspex_fitting.io import (
+from sunxspex.instruments.io import (
     _read_arf,
     _read_pha,
     _read_rhessi_spec_file,
