@@ -10,9 +10,9 @@ Needed for fitting
     * counts error 
         * _1D (same length as counts), label:`counts_error`,  unit:`counts`_
     * count energy bin edges 
-        * _1D, label:`count_energy edges`, unit:`keV`_
+        * _1D, label:`counts_energy edges`, unit:`keV`_
     * photon energy bin edges 
-        * _1D, label:`photon_energy edges`, unit:`keV`_
+        * _1D, label:`photons_energy edges`, unit:`keV`_
     * spectral response matrix 
         * _2D, label:`spectral_response_matrix`, unit:`cm^2 count photon^-1`_
     * effective exposure 
