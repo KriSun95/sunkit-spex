@@ -166,7 +166,7 @@ class SpectrumData:
         
         # check `sample_distribution` value is allowed
         if self.sample_distribution not in self.SAMPLE_OPTIONS:
-            raise ValueError("`The sample_distribution` should be from {self.SAMPLE_OPTIONS}.")
+            raise ValueError(f"The `sample_distribution` should be from {self.SAMPLE_OPTIONS}.")
         
         # check counts-related arrays are consistent sizes
         valid_counts_size = (
