@@ -11,7 +11,7 @@ Contains three main parts:
 """
 
 from base_instrument import BaseInstrument
-from base_spectral_response import SpectralResponseBase
+from base_spectral_response import BaseSpectralResponse
 from spectrum_data import SpectrumData
 
 class GeneralLoader(BaseInstrument):
@@ -53,7 +53,7 @@ class GeneralLoader(BaseInstrument):
         _ = general_io(*args)
         ...
     
-class GeneralSpectralResponse(SpectralResponseBase):
+class GeneralSpectralResponse(BaseSpectralResponse):
     def __init__(self, *args):
         """
         *args could be any pre-defined number of inputs. This will depend 
