@@ -1535,7 +1535,7 @@ def _extract_attenunator_info(att_dat, spectrum_end_time) -> dict[str, list]:
     n_attenuator_changes = att_dat["data"]["SP_ATTEN_STATE$$TIME"].size
     atten_change_times = atime.Time(att_dat["data"]["SP_ATTEN_STATE$$TIME"], format="utime").utc
     atten_change_times = atten_change_times.reshape(n_attenuator_changes)  # reshape so always 1d array
-    
+
     atten_change_times = atime.Time([*atten_change_times, spectrum_end_time.utc])
 
     return {
